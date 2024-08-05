@@ -10,12 +10,12 @@ static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#0d0d0d";
 static const char col_gray2[]       = "#a9b1d6";
 static const char col_gray3[]       = "#a9b1d6";
-static const char col_gray4[]       = "#acb0d0";
+static const char col_gray4[]       = "#4C4E5A";
 static const char col_cyan[]        = "#54487a";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray2, col_gray1,  col_cyan  },
+	[SchemeSel]  = { col_gray2, col_gray1,  col_gray4 },
 };
 
 /* tagging */
@@ -64,7 +64,8 @@ static const char *browsercmd[] = { "librewolf", NULL };
 static const char *notescmd[] = { "xournalpp", NULL };
 static const char *filecmd[] = { "thunar", NULL };
 static const char *musiccmd[] = { "nulloy", NULL };
-static const char *vaultcmd[] = { "obsidian", NULL }; 
+static const char *vaultcmd[] = { "obsidian", NULL };
+static const char *discordcmd[] = { "armcord", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -75,11 +76,12 @@ static const Key keys[] = {
 	{ MODKEY, 			XK_e, 	   spawn, 	   {.v = filecmd } },
 	{ MODKEY,			XK_m,	   spawn,	   {.v = musiccmd } },
 	{ MODKEY,			XK_o,      spawn,          {.v = vaultcmd } },
+	{ MODKEY, 			XK_d,	   spawn,	   {.v = discordcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_y,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
